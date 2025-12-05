@@ -1,0 +1,17 @@
+# Note: Install reportlab and pandas if needed, but for demo assume installed
+import pandas as pd
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+def excel_to_pdf(excel_file, pdf_file):
+    df = pd.read_excel(excel_file)
+    c = canvas.Canvas(pdf_file, pagesize=letter)
+    y = 750
+    for row in df.itertuples():
+        c.drawString(100, y, str(row))
+        y -= 20
+    c.save()
+
+# Example usage
+excel_to_pdf('input.xlsx', 'output.pdf')
+print("Converted!")

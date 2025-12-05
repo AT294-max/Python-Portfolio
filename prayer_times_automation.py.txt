@@ -1,0 +1,52 @@
+import requests
+import csv
+from datetime import date
+
+def get_prayer_times(city='Lahore', country='Pakistan'):
+    today = date.today().strftime('%d-%m-%Y')
+    url = f"https://api.aladhan.com/v1/timings/{today}?city={city}&country={country}&method=1"
+    response = requests.get(url)
+    data = response.json()['data']['timings']import requests
+import csv
+from datetime import date
+
+def get_prayer_times(city='Lahore', country='Pakistan'):
+    today = date.today().strftime('%d-%m-%Y')
+    url = f"https://api.aladhan.com/v1/timings/{today}?city={city}&country={country}&method=1"
+    response = requests.get(url)
+    data = response.json()['data']['timings']
+    return data
+
+times = get_prayer_times()
+with open('prayer_times.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Prayer', 'Time'])
+    for prayer, time in times.items():
+        writer.writerow([prayer, time])
+print("Prayer times saved to prayer_times.csv")import requests
+import csv
+from datetime import date
+
+def get_prayer_times(city='Lahore', country='Pakistan'):
+    today = date.today().strftime('%d-%m-%Y')
+    url = f"https://api.aladhan.com/v1/timings/{today}?city={city}&country={country}&method=1"
+    response = requests.get(url)
+    data = response.json()['data']['timings']
+    return data
+
+times = get_prayer_times()
+with open('prayer_times.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Prayer', 'Time'])
+    for prayer, time in times.items():
+        writer.writerow([prayer, time])
+print("Prayer times saved to prayer_times.csv")
+    return data
+
+times = get_prayer_times()
+with open('prayer_times.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Prayer', 'Time'])
+    for prayer, time in times.items():
+        writer.writerow([prayer, time])
+print("Prayer times saved to prayer_times.csv")
