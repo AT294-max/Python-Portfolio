@@ -1,5 +1,5 @@
 
-# Python Portfolio by Atiq Ur Rehman
+# Python Portfolio by Ateeq Ur Rehman
 
  
 I'm a BS Applied Computing student at UET Lahore. I build automation tools, web scrapers, and useful Python scripts.
